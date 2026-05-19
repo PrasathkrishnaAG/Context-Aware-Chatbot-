@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RAG Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Context-Aware Document Q&A Bot</h1>
+
+    <div class="upload-section">
+        <input type="file" id="fileInput" accept=".pdf,.txt">
+        <button onclick="uploadFile()">Upload Document</button>
+        <button onclick="clearAll()" class="clear-btn">Clear All</button>
+        <button onclick="resetChat()" class="reset-btn">Reset Chat</button>
+    </div>
+
+    <div class="status-section">
+        <span id="docStatus">No documents uploaded</span>
+    </div>
+
+    <div id="chatBox" class="chat-box"></div>
+
+    <div class="input-section">
+        <input type="text" id="questionInput"
+               placeholder="Ask a question about your documents..."
+               onkeypress="if(event.key === 'Enter') askQuestion()">
+        <button onclick="askQuestion()">Send</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
